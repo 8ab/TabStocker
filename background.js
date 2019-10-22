@@ -51,9 +51,8 @@ function StockTab() {
             chrome.storage.local.get(["stockTabs"], function (items) {
                 stockTabs = items.stockTabs ? items.stockTabs : [];
                 for (let i = 0; i < tabs.length; i++) {
-                    //「新しいタブ」以外を対象とする
-                    console.log(tabs[i].url);
-                    if (tabs[i].url != "chrome://newtab/") {
+                    //「chrome://」以外を対象とする
+                    if (tabs[i].url.indexOf("chrome://") == -1) {
                         console.log(tabs[i].url);
                         let flg = false;
                         for (let j = 0; j < stockTabs.length; j++) {
@@ -89,8 +88,8 @@ function StockAllTabs() {
                 stockTabs = items.stockTabs ? items.stockTabs : [];
                 chrome.tabs.create({ active: true });
                 for (let i = 0; i < tabs.length; i++) {
-                    //「新しいタブ」以外を対象とする
-                    if (tabs[i].url != "chrome://newtab/") {
+                    //「chrome://」以外を対象とする
+                    if (tabs[i].url.indexOf("chrome://") == -1) {
                         let flg = false;
                         for (let j = 0; j < stockTabs.length; j++) {
                             if (tabs[i].url === stockTabs[j].url) {
