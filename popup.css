@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Background */
+html {
+    width: 100%;
+}
+body {
+    width: 300px;
+    background: #222222;
+}
+#searchbox {
+    width: 95%;
+    border: none;
+    border-radius: 9px;
+    padding: 4px;
+    margin: 4px;
+    background: #eeeeee;
+    outline: none;
+}
+.container {
+    position: relative;
+    flex-direction: column;
+    padding: 7px 0px 7px 0px;
+    cursor: pointer;
+    height: 16px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 5px 20px 5px 1fr;
+    background: #222222;
+    color: #dddddd;
+}
+.container:hover {
+    border-radius: 9px 0 0 9px;
+    box-shadow: 0px 8px 10px -6px rgba(255,255,255,0.9) inset;
+    background: #333333;
+    filter: invert(1);
+}
+/* 画像は反転させないためにさらに反転させる */
+.container:hover img {
+    filter: invert(1);
+}
+.container:hover button {
+    display:inline;
+}
+.active {
+    border-radius: 9px 0 0 9px;
+    box-shadow: 0px 8px 10px -6px rgba(255,255,255,0.9) inset;
+    background: #333333;
+}
+.favicon {
+    height: 16px;
+    grid-row: 1;
+    grid-column: 2;
+}
+.content {
+    grid-row: 1;
+    grid-column: 4;
+    overflow: hidden;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+button {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    background: #999999;
+    display: none;
+    border: none;
+    border-radius: 100%;
+    position: absolute;
+    top: 5px;
+    left: 280px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease 0s;
+}
+button::before {
+    content: "";
+    display:inline-block;
+    width: 4px;
+    height: 14px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 3px;
+    left: 8px;
+}
+button::after {
+    content: "";
+    display:inline-block;
+    width: 4px;
+    height: 14px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 3px;
+    left: 8px;
+}
+button:hover {
+    opacity: 1;
+}
+/*
+button {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    background: transparent;
+    display: none;
+    border: none;
+    position: absolute;
+    top: 5px;
+    left: 280px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease 0s;
+}
+button::before {
+    content: "";
+    display:inline-block;
+    width: 9px;
+    height: 14px;
+    background-color: #999999;
+    border: 2px solid  #eeeeee;
+    border-radius: 4px;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+}
+button::after {
+    content: "";
+    display:inline-block;
+    width: 9px;
+    height: 14px;
+    background-color: #555555;
+    border: 2px solid  #eeeeee;
+    border-radius: 4px;
+    position: absolute;
+    top: 0px;
+    left: 1px;
+}
+button:hover {
+    opacity: 1;
+}
+*/
