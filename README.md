@@ -9,11 +9,11 @@
 開いているページ内で右クリック→[TabStocker]→[StockTab] または [StockAllTabs]を選択。
 
  - [StockTab]
-   現在選択しているタブの情報（URL、タイトル、iconのURL）をLocalStorageに保管する。
+   現在選択しているタブの情報（URL、タイトル、iconのURL）をローカルストレージに保管する。
    ストックしたタブは閉じられる。
 
  - [StockAllTabs]
-   現在開いている全てのタブの情報（URL、タイトル、iconのURL）をLocalStorageに保管する。
+   現在開いている全てのタブの情報（URL、タイトル、iconのURL）をローカルストレージに保管する。
    開いていた全タブが閉じられ、「新しいタブ」が開かれる。
 
 2. ストックしたタブの一覧表示
